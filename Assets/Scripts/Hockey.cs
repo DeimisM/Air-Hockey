@@ -6,16 +6,11 @@ using System;
 
 public class Hockey : MonoBehaviour
 {
-    public TMP_Text player_score;
-    public TMP_Text enemy_score;
+    int playerScore;
+    int enemyScore;
 
-    int player_points = 0;
-    int enemy_points = 0;
-
-    private void Update()
-    {
-
-    }
+    public TMP_Text playerScoreText;
+    public TMP_Text enemyScoreText;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name.Contains("Goal"))
@@ -26,14 +21,14 @@ public class Hockey : MonoBehaviour
 
         if(collision.gameObject.name.Contains("Enemy Goal"))
         {
-            player_points += 1;
-            player_score.text = player_points.ToString();
+            playerScore++;
+            playerScoreText.text = playerScore.ToString();
         }
 
         if (collision.gameObject.name.Contains("Player Goal"))
         {
-            enemy_points += 1;
-            enemy_score.text = enemy_points.ToString();
+            enemyScore++;
+            enemyScoreText.text = enemyScore.ToString();
         }
     }
 }
