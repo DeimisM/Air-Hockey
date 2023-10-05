@@ -11,15 +11,14 @@ public class Hockey : MonoBehaviour
 
     public TMP_Text playerScoreText;
     public TMP_Text enemyScoreText;
+
+    //public AudioSource source;
+    public AudioClip wallHit;
+    public AudioClip hit;
+    public AudioClip goal;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GetComponent<AudioSource>().Play();
-
-        if (collision.gameObject.name.Contains("Goal"))
-        {
-            transform.position = new Vector3(0, 0, 0);
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        }
+        //GetComponent<AudioSource>().Play();
 
         if(collision.gameObject.name.Contains("Enemy Goal"))
         {
@@ -28,6 +27,8 @@ public class Hockey : MonoBehaviour
 
             transform.position = Vector3.right;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+            GetComponent<AudioSource>().PlayOneShot(goal);
         }
 
         if (collision.gameObject.name.Contains("Player Goal"))
@@ -37,6 +38,18 @@ public class Hockey : MonoBehaviour
 
             transform.position = Vector3.left;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+            GetComponent<AudioSource>().PlayOneShot(goal);
+        }
+
+        if (collision.gameObject.name.Contains("Wall"))
+        {
+            GetComponent<AudioSource>().PlayOneShot(wallHit);
+        }
+
+        if (collision.gameObject.name.Contains("Entity"))
+        {
+            GetComponent<AudioSource>().PlayOneShot(hit);
         }
     }
 }

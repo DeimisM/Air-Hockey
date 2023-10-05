@@ -287,6 +287,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScoreText: {fileID: 574755840}
   enemyScoreText: {fileID: 610804983}
+  wallHit: {fileID: 8300000, guid: a9801bd5bfb5d4141ad7c985f286752e, type: 3}
+  hit: {fileID: 8300000, guid: 2b21f856e70462745a70d02f3b7618a5, type: 3}
+  goal: {fileID: 8300000, guid: a4c55c57f97af0940b3dc3b095e5a14e, type: 3}
 --- !u!82 &91857913
 AudioSource:
   m_ObjectHideFlags: 0
@@ -299,7 +302,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a9801bd5bfb5d4141ad7c985f286752e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -666,7 +669,7 @@ GameObject:
   - component: {fileID: 371944937}
   - component: {fileID: 371944938}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1042,7 +1045,7 @@ GameObject:
   - component: {fileID: 466903038}
   - component: {fileID: 466903037}
   m_Layer: 0
-  m_Name: Corner
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1906,7 +1909,7 @@ GameObject:
   - component: {fileID: 631815084}
   - component: {fileID: 631815085}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2072,7 +2075,7 @@ GameObject:
   - component: {fileID: 696471674}
   - component: {fileID: 696471673}
   m_Layer: 0
-  m_Name: Corner
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2333,7 +2336,7 @@ GameObject:
   - component: {fileID: 1121743420}
   - component: {fileID: 1121743419}
   m_Layer: 0
-  m_Name: Corner
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2593,7 +2596,7 @@ GameObject:
   - component: {fileID: 1460787067}
   - component: {fileID: 1460787066}
   m_Layer: 0
-  m_Name: Corner
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3017,7 +3020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1743017625}
   m_Layer: 0
-  m_Name: Walls
+  m_Name: Design
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
