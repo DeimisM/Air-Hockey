@@ -13,6 +13,8 @@ public class Hockey : MonoBehaviour
     public TMP_Text enemyScoreText;
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        GetComponent<AudioSource>().Play();
+
         if (collision.gameObject.name.Contains("Goal"))
         {
             transform.position = new Vector3(0, 0, 0);
@@ -23,12 +25,18 @@ public class Hockey : MonoBehaviour
         {
             playerScore++;
             playerScoreText.text = playerScore.ToString();
+
+            transform.position = Vector3.right;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
 
         if (collision.gameObject.name.Contains("Player Goal"))
         {
             enemyScore++;
             enemyScoreText.text = enemyScore.ToString();
+
+            transform.position = Vector3.left;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
 }
