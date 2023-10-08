@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
-using UnityEditor.Search;
 using JetBrains.Annotations;
 
 public class Hockey : MonoBehaviour
